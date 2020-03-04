@@ -1,0 +1,7 @@
+---
+GITLAB_SCRIPT: script.rpm.sh
+GITLAB_DOWNLOAD_URL: https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/
+GITLAB_DOWNLOAD_DEST: /tmp/
+
+GITLAB_PACKAGES:
+  - gitlab-ee

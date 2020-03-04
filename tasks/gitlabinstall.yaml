@@ -1,0 +1,22 @@
+---
+#- name: Enable Gitlab repo
+#  shell: |
+#         curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
+
+- name: "Download GitLab Repo file"
+  get_url:
+    url: "{{GITLAB_DOWNLOAD_URL}}{{GITLAB_SCRIPT}}"
+    dest: "{{GITLAB_DOWNLOAD_DEST}}"
+    mode: '0755'
+
+- name: "Execute downloaded repo script"
+  shell:
+    cmd: "./{{GITLAB_SCRIPT}}"
+  args:
+    chdir: "{{GITLAB_DOWNLOAD_DEST}}"
+
+- name: "Install Gitlab packages"
+  yum:
+    name: "{{GITLAB_PACKAGES}}"
+    state: present
+
