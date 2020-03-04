@@ -1,5 +1,5 @@
-gitlab-install
-=============
+ansible-role-gitlab-install
+===========================
 
 The gitlab-install role is associated with configuring a gitlab server.
 
